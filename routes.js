@@ -13,6 +13,22 @@ module.exports = function(app){
 
 app.get('/', function(req,res){
     res.render('index', {});
+	var userImageFile = "./kitchen_8.jpg";
+	var maytagAudioFile = "./public/audio/audio.aif";
+	var maytagOverlayFile = "./public/videos/frankerberry_countchockula.mp4";
+	var exec = child_process.exec;
+	var xCoord = 500;
+	var yCoord = 200;
+	var vWidth = 270;
+	var vHeight = 470;
+	var inputFiles = ['./kitchen_8.jpg'];
+
+
+	exec('ffmpeg -loop 1 -i '+userImageFile+' -c:v libx264 -c:a aac -strict experimental -t 30 -pix_fmt yuv420p loopedImage.mp4;',function(){
+		var newVideo = 'loopedImage.mp4';
+		ffmpeg(newVideo).mergeAdd(maytagAudioFile).mergeAdd(newVideo).addOption(['-vf', 'movie='+maytagOverlayFile+ ' [watermark]; [in] [watermark] overlay=shortest=1:x='+xCoord+':y='+yCoord+' [out]']).outputOptions('-metadata', 'title=Bring Maytag Home').save('customKitchen.mp4').on('end', function(){console.log('Finished Processing')}).run();
+	});
+
 });    
     
 };
