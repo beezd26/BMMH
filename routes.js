@@ -13,9 +13,10 @@ module.exports = function(app){
 
 app.get('/', function(req,res){
     res.render('index', {});
+    console.log("rendering file")
 	var userImageFile = "./kitchen_8.jpg";
-	var maytagAudioFile = "./public/audio/audio.aif";
-	var maytagOverlayFile = "./public/videos/frankerberry_countchockula.mp4";
+	var maytagAudioFile = "./audio.aif";
+	var maytagOverlayFile = "./frankerberry_countchockula.mp4";
 	var exec = child_process.exec;
 	var xCoord = 500;
 	var yCoord = 200;
