@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <img src="/img/userskitchen.jpg" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <form action="" method="POST">
+                    <fieldset>
+                        <label>User Name</label>
+                        <input type="text" name="username" />
+                    </fieldset>
+                    <fieldset>
+                        <label>User Email</label>
+                        <input type="text" name="email" />
+                    </fieldset>
+                    <fieldset>
+                        <label>User Password</label>
+                        <input type="text" name="password"></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <label>UserID</label>
+                        <input type="text" name="userID">
+                    </fieldset>
+                    <fieldset>
+                        <label>Submission ID</label>
+                        <input type="text" name="submissionID" />
+                    </fieldset>
+                    <fieldset>
+                        <label>RoomType</label>
+                        <input type="text" name="roomType">
+                    </fieldset>
+                    <fieldset>
+                        <label>Room Image Path:</label>
+                        <input type="text" name="roomImagePath">
+                    </fieldset>
+                    <fieldset>
+                        <label>Appliance Type</label>
+                        <input type="radio" name="applianceType" value="refrigerator" />Refrigerator<br>
+                        <input type="radio" name="applianceType" value="oven" />Oven<br>
+                        <input type="radio" name="applianceType" value="dishwasher" />Dishwasher<br>
+                        <input type="radio" name="applianceType" value="washer" />Washer<br>
+                        <input type="radio" name="applianceType" value="dryer" />Dryer<br>
+                    </fieldset>
+                    <fieldset>
+                        <label>Appliance Width</label>
+                        <input type="number" name="applianceWidth">
+                    </fieldset>
+                    <fieldset>
+                        <label>Appliance Height</label>
+                        <input type="number" name="applianceHeight">
+                    </fieldset>
+                    <fieldset>
+                        <label>Appliance X Coordinate</label>
+                        <input type="number" name="appliancePositionX">
+                    </fieldset>
+                    <fieldset>
+                        <label>Appliance Y Coordinate</label>
+                        <input type="number" name="appliancePositionY">
+                    </fieldset>
+                    <fieldset>
+                        <label>Appliance Order</label>
+                        <input type="number" name="applianceOrder">
+                    </fieldset>
+                    <button type="submit" class="btn">Submit</button>
+                    <div><%= msg %></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
